@@ -1,0 +1,12 @@
+{% extends 'book_list.html' %}
+
+{% block content_header %}
+  <h2>Add Field</h2>
+  <h5>(Drag-and-drop here or select files with the field contours for the upload to start)</h5>
+  <br>
+  
+  <p>
+    <a href="{% url 'class_upload_book' %}" class="btn btn-primary">Add Field</a><h7>(Supported formats are:
+      .kml, .kmz., .geojson, .shp, or zip (containing .shp, .shx., .dbf files)</h5>
+  </p>
+{% endblock %}

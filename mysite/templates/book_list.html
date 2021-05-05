@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  {% block content_header %}
+    <h2></h2>
+    <p>
+      <a href="{% url 'upload_book' %}" class="btn btn-primary">Add Field</a>
+    </p>
+  {% endblock %}
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Image of Field (Picture)</th>
+        <th>Name of Field</th>
+        <th>Crop Type on Field</th>
+        <th>Delete Field</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for book in books %}
+        <tr>
+          <td>
+            {% if book.cover %}
+              <img src="{{ book.cover.url }}" alt="{{ book.title }}" style="width:100px;">
+            {% else %}
+              <span class="text-muted">No Image for Field</span>
+            {% endif %}
+          </td>
+          <td>{{ book.title }}</td>
+          <td>{{ book.author }}</td>
+          <td>
+            <form method="post" action="{% url 'delete_book' book.pk %}">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
