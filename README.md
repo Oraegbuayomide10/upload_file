@@ -1,9 +1,9 @@
-# Django File Upload Tutorial
+
 
 [![Python Version](https://img.shields.io/badge/python-3.7-brightgreen.svg)](https://python.org)
 [![Django Version](https://img.shields.io/badge/django-2.1-brightgreen.svg)](https://djangoproject.com)
 
-Code example used in the tutorial series on Django File Upload.
+
 ## Running the Project Locally
 
 First, clone the repository to your local machine:
